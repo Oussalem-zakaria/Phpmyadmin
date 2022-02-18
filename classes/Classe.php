@@ -2,29 +2,11 @@
 // include "conn.php";
 include "GererTable.php";
 class Classe extends GererTable{
-    private $codeClasse;
-    private $filiere;
-    private $num;
-
-    public function getcodeClasse()
+    public function __construct()
     {
-        return $this->codeClasse;
-    }
-
-    public function getFiliere()
-    {
-        return $this->filiere;
-    }
-
-    public function getNum()
-    {
-        return $this->num;
-    }
-
-    public function __construct($filiere,$num,$codeClasse)
-    {
-        $this->codeClasse = $codeClasse;
-        $this->filiere = $filiere;
-        $this->num = $num;
+        $this->nameTable = 'classes';
+        $this->columns = array('filiere','num');
+        $this->primaryKey = 'codeClasse';
+        parent::__construct($this->nameTable,$this->columns,$this->primaryKey);
     }
 }
